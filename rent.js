@@ -1,20 +1,23 @@
 class RentableItem {
+    #name;
+    #availability;
+
     constructor(name) {
-        this.name = name;
-        this.availability = true;
-    }
-    
-    rent(){
-        if (!this.availability){
-            return `!! ${this.name} is not available !!`;
-        }
-        this.availability = false;
-        return `${this.name} has been rented successfully.`;
+        this.#name = name;
+        this.#availability = true;
     }
 
-    returnItem(){
-        this.availability = true;
-        return `${this.name} has been returned and is now available.`
+    rent() {
+        if (!this.#availability) {
+            return `!! ${this.#name} is not available !!`;
+        }
+        this.availability = false;
+        return `${this.#name} has been rented successfully.`;
+    }
+
+    returnItem() {
+        this.#availability = true;
+        return `${this.#name} has been returned and is now available.`
     }
 }
 
